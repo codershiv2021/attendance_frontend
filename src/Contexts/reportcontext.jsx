@@ -8,7 +8,7 @@ const ReportContextProvider = ({children}) =>{
 
       const getreport = async() =>{
             try{
-                  const resp = await axios.get('http://localhost:3001/api/report')
+                  const resp = await axios.get('https://attendance-rfz6.onrender.com/api/report')
 //find kar lega this url me which matches .. if more than 1 then check post/get/put which matches 
 //then uske properties can use here .. using Rapport
             console.log('Response postive',resp.data);

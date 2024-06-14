@@ -32,7 +32,7 @@ const Fullreport = () => {
         const fetchReports = async() =>{
             setisloading(true);
             try{
-                const response = await axios.get(`http://localhost:3001/api/report?page=${currentPage}&limit=${recordsPerPage}`);
+                const response = await axios.get(`https://attendance-rfz6.onrender.com/api/report?page=${currentPage}&limit=${recordsPerPage}`);
                 setreports(response.data.reports)
                 settotalpages(response.data.totalpages)
             }
