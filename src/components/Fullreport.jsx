@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Report from "./Report";
-import { Reportcontext } from "../Contexts/reportcontext";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 const Container = styled.div`
     margin: 40px;
@@ -21,7 +20,6 @@ const PaginationControls = styled.div`
 `;
 
 const Fullreport = () => {
-    const reportcontainer = useContext(Reportcontext);
     const [isloading, setisloading] = useState(true);
     const [reports,setreports] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -51,37 +49,6 @@ const Fullreport = () => {
     const handlePrevPage = () =>{
         setCurrentPage((prev)=>Math.max(prev-1,1));
     };
-
-//     useEffect(() => {
-//         const getReport = async () => {
-//             const isokay = await reportcontainer.getreport();
-//             setisloading(false);
-//         };
-//         getReport();
-//     }, [reportcontainer]);
-
-//     useEffect(() => {   
-//       console.log('Reports in context:', reportcontainer.reports);
-//   }, [reportcontainer.reports]);
-
-//     return (
-//         <Des>
-//             {isloading ? (
-//                 <P>Your report is loading</P>
-//             ) : (
-//                 <Container>
-//                     {reportcontainer.reports.length === 0 ? (
-//                         <P>No reports available</P>
-//                     ) : (
-//                         reportcontainer.reports.map((item) => (
-//                             <Report item={item} key={item.id} />
-//                         ))
-//                     )}
-//                 </Container>
-//             )}
-//         </Des>
-//     );
-// };
 
 return (
     <Des>
