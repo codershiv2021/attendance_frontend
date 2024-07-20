@@ -54,7 +54,7 @@ const Intervalreport = () =>{
       
       const fetchRecords = async () =>{
             try{
-                  const response = await axios.get('http://localhost:3001/api/report/records',{
+                  const response = await axios.get('https://attendance-backend-2-eckw.onrender.com/api/report/records',{
                         params:{
                               startDate: startDateRef.current.value, 
                               endDate: endDateRef.current.value

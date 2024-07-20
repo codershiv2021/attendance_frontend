@@ -26,11 +26,12 @@ const Fullreport = () => {
     const [totalpages,settotalpages] = useState(0);
     const recordsPerPage = 5; // Number of records to display per page
 
+
     useEffect(()=>{
         const fetchReports = async() =>{
             setisloading(true);
             try{
-                const response = await axios.get(`http://localhost:3001/api/report?page=${currentPage}&limit=${recordsPerPage}`);
+                const response = await axios.get(`https://attendance-backend-2-eckw.onrender.com/api/report?page=${currentPage}&limit=${recordsPerPage}`);
                 setreports(response.data.reports)
                 settotalpages(response.data.totalpages)
             }
